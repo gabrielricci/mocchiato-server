@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST', 'PUT', 'PATCH'])
 @app.route('/<path:full_path>', methods=["GET", "POST", "PUT", "PATCH"])
 def index(full_path=None):
-    sleep_time = int(request.args.get('sleep', 0))
+    sleep_time = int(request.args.get('sleep', 600))
     if sleep_time > 0:
         time.sleep(sleep_time)
 
